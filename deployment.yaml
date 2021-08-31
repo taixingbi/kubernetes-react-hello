@@ -1,19 +1,19 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: hello
+  name: react-hello
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello
+      app: react-hello
   template:
     metadata:
       labels:
-        app: hello
+        app: react-hello
     spec:
       containers:
-        - name: hello
+        - name: react-hello
           image: taixingbi/react-hello
           imagePullPolicy: Always
           ports:
@@ -23,7 +23,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: hello
+  name: react-hello
 spec:
   type: NodePort
   ports:
@@ -32,4 +32,4 @@ spec:
       protocol: TCP
       nodePort: 31000
   selector:
-    app: hello
+    app: react-hello
