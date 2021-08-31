@@ -7,7 +7,7 @@ read docker.md
 ```
 kubectl apply -f deployment.yaml
 kubectl get pods
-kubectl describe 
+kubectl event 
 kubectl get deployment
 kubectl get service
 kubectl delete daemonsets,replicasets,services,deployments,pods,rc --all
